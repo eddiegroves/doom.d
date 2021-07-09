@@ -1,0 +1,31 @@
+Name and address
+#+begin_src elisp
+(setq user-full-name "Eddie Groves"
+      user-mail-address "eddiegroves@gmail.com")
+#+end_src
+
+Font
+https://github.com/source-foundry/Hack
+https://github.com/ryanoasis/nerd-fonts
+Must been installed already (see repo)
+
+#+begin_src elisp
+(setq doom-font (font-spec :family "Hack Nerd Font" :size 18 :weight 'semi-light))
+#+end_src
+
+https://github.com/hlissner/emacs-doom-themes
+https://draculatheme.com/
+
+#+begin_src elisp :tangle no
+(setq doom-theme 'doom-dracula)
+#+end_src
+
+#+begin_src elisp :tangle no
+(setq doom-theme 'doom-one)
+#+end_src
+
+;; This determines the style of line numbers in effect. If set to `nil', line
+;; numbers are disabled. For relative line numbers, set this to `relative'.
+#+begin_src elisp
+(setq display-line-numbers-type nil)
+#+end_src

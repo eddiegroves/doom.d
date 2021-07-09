@@ -1,0 +1,7 @@
+* Changelog
+** 2017-07-10
+*** Changed
+
+- Set personal name and email address.
+- Font set to [[https://github.com/source-foundry/Hack][Hack Font]].
+- Disable line numbering.
