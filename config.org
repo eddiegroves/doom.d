@@ -1,17 +1,19 @@
-Name and address
+* Name and address
 #+begin_src elisp
 (setq user-full-name "Eddie Groves"
       user-mail-address "eddiegroves@gmail.com")
 #+end_src
 
-Font
-https://github.com/source-foundry/Hack
-https://github.com/ryanoasis/nerd-fonts
-Must been installed already (see repo)
+* Font
+
+Current font is [[https://github.com/source-foundry/Hack][Hack font]] with a bunch of glyphs (icons) added to it. The font
+must be installed already, see [[https://github.com/ryanoasis/nerd-fonts][Nerd Fonts]].
 
 #+begin_src elisp
 (setq doom-font (font-spec :family "Hack Nerd Font" :size 18 :weight 'semi-light))
 #+end_src
+
+* Theme
 
 https://github.com/hlissner/emacs-doom-themes
 https://draculatheme.com/
@@ -24,8 +26,40 @@ https://draculatheme.com/
 (setq doom-theme 'doom-one)
 #+end_src
 
+* Line numbers
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 #+begin_src elisp
 (setq display-line-numbers-type nil)
+#+end_src
+
+* Backup settings
+
+Reasonable looking backup settings from a [[https://stackoverflow.com/a/18330742/5769][Stack Overflow answer]].
+
+#+begin_src elisp
+(defvar --backup-directory (concat user-emacs-directory "backups"))
+(if (not (file-exists-p --backup-directory))
+    (make-directory --backup-directory t))
+(setq backup-directory-alist `(("." . ,--backup-directory)))
+(setq make-backup-files t       ; backup of a file the first time it is saved.
+      backup-by-copying t       ; don't clobber symlinks
+      version-control t         ; version numbers for backup files
+      delete-old-versions t     ; delete excess backup files silently
+      delete-by-moving-to-trash t
+      kept-old-versions 6       ; oldest versions to keep when a new numbered backup is made (default: 2)
+      kept-new-versions 9       ; newest versions to keep when a new numbered backup is made (default: 2)
+      auto-save-default t       ; auto-save every buffer that visits a file
+      auto-save-timeout 20      ; number of seconds idle time before auto-save (default: 30)
+      auto-save-interval 200    ; number of keystrokes between auto-saves (default: 300)
+      )
+#+end_src
+
+* Start-up
+
+Start maximized
+
+#+begin_src elisp
+(add-hook 'window-setup-hook #'toggle-frame-maximized)
 #+end_src
