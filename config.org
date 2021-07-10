@@ -18,12 +18,8 @@ must be installed already, see [[https://github.com/ryanoasis/nerd-fonts][Nerd F
 https://github.com/hlissner/emacs-doom-themes
 https://draculatheme.com/
 
-#+begin_src elisp :tangle no
+#+begin_src elisp
 (setq doom-theme 'doom-dracula)
-#+end_src
-
-#+begin_src elisp :tangle no
-(setq doom-theme 'doom-one)
 #+end_src
 
 * Line numbers
@@ -64,7 +60,7 @@ Start maximized
 (add-hook 'window-setup-hook #'toggle-frame-maximized)
 #+end_src
 
-* White space :disabled:
+* TODO White space :disabled:
 
 Add this back when I see the need, and document it better.
 

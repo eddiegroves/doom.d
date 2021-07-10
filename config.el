@@ -3,6 +3,8 @@
 
 (setq doom-font (font-spec :family "Hack Nerd Font" :size 18 :weight 'semi-light))
 
+(setq doom-theme 'doom-dracula)
+
 (setq display-line-numbers-type nil)
 
 (defvar --backup-directory (concat user-emacs-directory "backups"))
