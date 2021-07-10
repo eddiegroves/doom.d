@@ -63,3 +63,59 @@ Start maximized
 #+begin_src elisp
 (add-hook 'window-setup-hook #'toggle-frame-maximized)
 #+end_src
+
+* White space :disabled:
+
+Add this back when I see the need, and document it better.
+
+#+begin_src elisp :tangle no
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+#+end_src
+
+* Org mode
+
+Always enable spelling
+
+#+begin_src elisp
+(add-hook 'org-mode-hook 'turn-on-flyspell)
+#+end_src
+
+Disable visual line mode
+
+#+begin_src elisp
+(add-hook 'org-mode-hook (lambda ()
+                              (visual-line-mode -1)))
+#+end_src
+
+Match the Doom screenshot
+
+#+begin_src elisp
+(setq org-ellipsis " ▼ ")
+#+end_src
+
+Always auto fill paragraphs
+
+#+begin_src elisp
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
+#+end_src
+
+Always start with things hidden
+
+#+begin_src elisp
+(setq org-hide-block-startup t)
+(setq org-startup-folded t)
+#+end_src
+
+Disable :ATTACH: tag when attaching documents
+
+#+begin_src elisp
+(setq org-attach-auto-tag nil)
+#+end_src
+
+Try to fix indention of source blocks?
+https://emacs.stackexchange.com/questions/9472/org-mode-source-block-doesnt-respect-parent-buffer-indentation
+
+#+begin_src elisp
+(setq org-src-preserve-indentation nil
+      org-edit-src-content-indentation 0)
+#+end_src

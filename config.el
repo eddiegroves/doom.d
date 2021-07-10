@@ -22,3 +22,20 @@
       )
 
 (add-hook 'window-setup-hook #'toggle-frame-maximized)
+
+(add-hook 'org-mode-hook 'turn-on-flyspell)
+
+(add-hook 'org-mode-hook (lambda ()
+                              (visual-line-mode -1)))
+
+(setq org-ellipsis " ▼ ")
+
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
+
+(setq org-hide-block-startup t)
+(setq org-startup-folded t)
+
+(setq org-attach-auto-tag nil)
+
+(setq org-src-preserve-indentation nil
+      org-edit-src-content-indentation 0)
